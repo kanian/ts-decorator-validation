@@ -1,0 +1,48 @@
+{
+  "name": "ts-decorator-validation",
+  "version": "1.0.0",
+  "description": "Ensure your typescript objects are always valid using decorators.",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "test": "npm run compile && jest",
+    "testWithCoverage": "npm run compile && jest --coverage ",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run compile",
+    "prepublishOnly": "npm test && npm run format",
+    "version": "git add .",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanian/ts-decorator-validation.git"
+  },
+  "keywords": [
+    "typescript",
+    "decorator",
+    "validation"
+  ],
+  "author": "Patrick Assoa Adou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanian/ts-decorator-validation/issues"
+  },
+  "homepage": "https://github.com/kanian/ts-decorator-validation#readme",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/joi": "^14.3.4",
+    "@types/node": "^13.1.1",
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
+  }
+}
