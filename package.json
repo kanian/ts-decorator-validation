@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/kanian/ts-decorator-validation#readme",
   "dependencies": {
-    "@hapi/joi": "^16.1.8"
+    "@hapi/joi": "^16.1.8",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/jest": "^24.0.25",
