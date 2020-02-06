@@ -40,16 +40,12 @@ export function validateConstructorParams(target: any, args: any[]) {
     const parameterIndexes = Object.keys(existingConstrainedParameters)
     for (let parameterIndex of parameterIndexes) {
       console.log('chekcing')
-      const {error, value} = existingConstrainedParameters[parameterIndex].validate(
+      const { error } = existingConstrainedParameters[parameterIndex].validate(
         args[Number.parseInt(parameterIndex)]
       )
-      console.log(error instanceof Error ? error : value)
-      // if (
-      //   parameterIndex >= arguments.length ||
-      //   arguments[parameterIndex] === undefined
-      // ) {
-      //   throw new Error('Missing required argument.')
-      // }
+      if (error instanceof Error) {
+        throw error
+      }
     }
   }
 }
