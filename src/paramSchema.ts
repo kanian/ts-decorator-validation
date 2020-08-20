@@ -1,7 +1,8 @@
-import "reflect-metadata";
-import { Schema } from "joi";
-export const parameterSchemaMetadataKey = Symbol("parameterSchema");
-export type ConstrainedParameterMap = { [id: string]: Schema };
+import 'reflect-metadata'
+import { Schema } from 'joi'
+export const parameterSchemaMetadataKey = Symbol('parameterSchema')
+export type ConstrainedParameterMap = { [id: string]: Schema }
+
 export function paramSchema(schema: Schema) {
   return function setParamSchemaMetadata(
     target: Object,
@@ -9,16 +10,16 @@ export function paramSchema(schema: Schema) {
     parameterIndex: number
   ) {
     propertyKey =
-      typeof propertyKey === "undefined" ? "constructor" : propertyKey;
+      typeof propertyKey === 'undefined' ? 'constructor' : propertyKey
     let existingConstrainedParameters: { [id: string]: Schema } =
       Reflect.getOwnMetadata(parameterSchemaMetadataKey, target, propertyKey) ||
-      [];
-    existingConstrainedParameters[parameterIndex] = schema;
+      []
+    existingConstrainedParameters[parameterIndex] = schema
     Reflect.defineMetadata(
       parameterSchemaMetadataKey,
       existingConstrainedParameters,
       target,
       propertyKey
-    );
-  };
+    )
+  }
 }
