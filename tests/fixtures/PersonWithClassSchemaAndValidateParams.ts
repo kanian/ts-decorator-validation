@@ -1,7 +1,7 @@
 import { propertySchema, schema } from '../../src'
 
 import { schemas } from './schemas'
-@schema(schemas.personSchema)
+@schema(schemas.personSchema, true)
     class PersonWithClassSchemaAndValidateParams {
       age: number
       name: string

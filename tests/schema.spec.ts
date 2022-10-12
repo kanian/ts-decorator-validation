@@ -22,7 +22,7 @@ describe('schema :', () => {
       const p = new PersonWithClassSchema('Jake', 50)
       expect(p.name === 'Jake' && p.age === 50).toBe(true)
     })
-    it('Allows instance creation when validateParams is set, and no parameter has a schema', () => {
+    it('Allows instance creation when validateParams is set, no parameter has a schema and arguments are valid', () => {
       const p = new PersonWithClassSchemaAndValidateParams('Jake', 50)
       expect(p.name === 'Jake' && p.age === 50).toBe(true)
     })
