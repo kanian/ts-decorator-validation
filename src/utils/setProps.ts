@@ -9,8 +9,7 @@ export function setProps<T extends object>(
     let errors = []
     for (let prop in values) {
       try {
-        o[prop as any] =
-          values[prop] !== undefined ? values[prop] : o[prop as any]
+          values[prop] !== undefined ? o[prop] = values[prop] : undefined
       } catch (error) {
         errors.push(error)
         continue
