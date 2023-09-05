@@ -16,8 +16,7 @@
     "prepare": "npm run compile",
     "prepublishOnly": "npm run lint && npm test",
     "version": "git add .",
-    "postversion": "git push && git push --tags",
-    "publish": "npm run version && npm publish"
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
