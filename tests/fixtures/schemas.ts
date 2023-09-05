@@ -1,4 +1,4 @@
-const Joi = require('@hapi/joi')
+import Joi = require('joi')
 
 const personNameSchema = Joi.string().min(3)
 const personAgeSchema = Joi.number().min(1)
