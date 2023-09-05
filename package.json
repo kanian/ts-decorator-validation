@@ -17,7 +17,7 @@
     "prepublishOnly": "npm run prepublish",
     "version": "git add .",
     "postversion": "git push && git push --tags",
-    "prepublish": "npm run lint && npm run format && npm test",
+    "prepublish": "npm run lint && npm run format && git add . && git commit - m \"chore: formats\" && npm test",
     "publish": "npm run version && npm publish"
   },
   "repository": {
