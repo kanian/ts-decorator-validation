@@ -11,9 +11,11 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run compile",
-    "prepublishOnly": "npm test",
-    "version": "git add .",
-    "postversion": "git push && git push --tags"
+    "prepublishOnly": "npm run prepublish",
+    "version": "npm run version && git add .",
+    "postversion": "git push && git push --tags",
+    "prepublish": "npm run lint && npm test",
+    "publish": "npm run version && npm publish"
   },
   "repository": {
     "type": "git",
