@@ -15,9 +15,9 @@
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run compile",
     "prepublishOnly": "npm run prepublish",
-    "version": "npm run version && git add .",
+    "version": "git add .",
     "postversion": "git push && git push --tags",
-    "prepublish": "npm run lint && npm test",
+    "prepublish": "npm run lint && npm run format && npm test",
     "publish": "npm run version && npm publish"
   },
   "repository": {
